@@ -24,11 +24,6 @@ h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
-// Add padding to icon
-// i {
-//   padding-right: 5px;
-// }
-
 //Background Gradient
 .navbar, .home-callout {
   //Gradient provided by https://twitter.com/_ighosh 
@@ -40,6 +35,11 @@ h1, h2, h3 {
 //Nav Styles
 .navbar {
   border: none;
+}
+
+.navbar-brand {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
 }
 
 
