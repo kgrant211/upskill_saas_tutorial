@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   belongs_to :plan
-  has_one :profile
+  has_one :profile 
   
   attr_accessor :stripe_card_token
   # If Pro user passes validations (email,pwd,etc),
@@ -20,4 +20,10 @@ class User < ApplicationRecord
       save!
     end
   end
+   
+   def self.search(search)
+   @user = User.joins(:profile)
+            .where('users.email LIKE ? OR profiles.last_name LIKE ?', "%#{search}%","%#{search}%")
+   end
+   
 end

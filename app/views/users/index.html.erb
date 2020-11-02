@@ -3,6 +3,15 @@
         <div class="col-md-8 col-md-offset-2">
             <h1 class="text-center">Property managers near you</h1>
             <p class="text-center">Welcome to the Placiest community.  Below are the best property managers and hosts near you.</p>
+            <div class="search">
+                 <br/>
+                 <div class="md-form mt-0">
+                    <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+                    <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search profiles" %> 
+                    <% end %>
+                    </br>
+                </div>
+            </div> 
             <ul class="list-unstyled">
                 <% @users.each do |user| %>
                     <% if user.profile %>
