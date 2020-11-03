@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201027165303) do
+ActiveRecord::Schema.define(version: 20201103030506) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20201027165303) do
     t.text     "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "profile_id"
+    t.string  "zip_codes"
+    t.index ["profile_id"], name: "index_locations_on_profile_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -31,7 +39,7 @@ ActiveRecord::Schema.define(version: 20201027165303) do
     t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "job_title"
+    t.string   "services_offered"
     t.string   "phone_number"
     t.string   "contact_email"
     t.string   "description"
@@ -41,6 +49,7 @@ ActiveRecord::Schema.define(version: 20201027165303) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "business_name"
   end
 
   create_table "users", force: :cascade do |t|
