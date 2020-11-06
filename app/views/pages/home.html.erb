@@ -1,46 +1,56 @@
-<div class="home-callout text-center containter-fluid">
+<div class="home-callout text-center container-fluid">
   <h1>Welcome to Placiest.</h1>
   <h3>Find someone to manage your place.</h3>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="search">
+     <br/>
+       <div class="md-form mt-0">
+        <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Your property location" %> 
+        <% end %>
+        </br>
+      </div>
+      </div>
+    </div> 
 </div>
-<div class="container home-signup-links">
-  <div class="row">
-    <% if user_signed_in? %>
-      <div class="col-md-6">
-        <div class="well">
-          <h2 class="text-center">Your Profile</h2>
-          <% if current_user.profile %>
-            <%= link_to "Edit your profile", edit_user_profile_path(current_user.id), class: 'btn btn-default btn-lg btn-block' %>
-            <%= link_to "View your profile", user_path(current_user.id), class: 'btn btn-default btn-lg btn-block' %>
-          <% else %>
-          <p class="text-center">Create your profile to share your details with potential leads.</p>
-          <%= link_to "Create your profile!", new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
-          <% end %>        
+<div class="content-wrapper">
+     <div class="container">
+      <section class="features-overview" id="features-section" >
+        <div class="content-header">
+          <h2>How it works</h2>
+          <h6 class="section-subtitle text-muted">Find a local property manager to take care of your rental<br>property needs.</h6>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="well">
-          <h2 class="text-center">The Community</h2>
-            <p class="text-center">Visit the community to see all property managers.</p>
-            <%= link_to "Visit the Community", users_path, class: 'btn btn-default btn-lg btn-block' %>
+        <div class="d-md-flex justify-content-start">
+          <div class="grid-margin d-flex justify-content-start">
+            <div class="features-width">
+              <img src="images/Group12.svg" alt="" class="img-icons">
+              <%= show_svg('Group12.svg') %>
+              <h5 class="py-3">Easy<br>Search</h5>
+              <p class="text-muted">Quickly get connected with all of the property managers and hosts in your area.</p>
+              <!--<a href="#"><p class="readmore-link">Readmore</p></a>  -->
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-center">
+            <div class="features-width">
+              <img src="images/Group7.svg" alt="" class="img-icons">
+              <%= show_svg('Group7.svg') %>
+              <h5 class="py-3">Connect<br>Quickly</h5>
+              <p class="text-muted">You're in good hands.  All of our managers have been vetted to ensure their the best in the business. </p>
+              <!--<a href="#"><p class="readmore-link">Readmore</p></a>-->
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-end">
+            <div class="features-width">
+              <img src="images/Group5.svg" alt="" class="img-icons">
+              <%= show_svg('Group5.svg') %>
+              <h5 class="py-3">Get<br>Paid</h5>
+              <p class="text-muted">Make the most of your rental property and live the life you've always dreamed.</p>
+              <!--<a href="#"><p class="readmore-link">Readmore</p></a>-->
+            </div>
+          </div>
         </div>
+        </section>
       </div>
-    <% else %>
-    <div class="col-md-6">
-      <div class="well">
-      <h2 class="text-center">Basic membership link</h2>
-      <h4 class="text-center">Sign up for free and see what it's all about.</h4>
-      <br/>
-      <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="well">
-      <h2 class="text-center">Pro membership link</h2>
-      <h4 class="text-center">Sign up for a Pro account and get access to all features and other members.</h4>
-      <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  
-</div>
+     </div>
+ </div>
+      

@@ -7,7 +7,7 @@
                  <br/>
                  <div class="md-form mt-0">
                     <%= form_tag(users_path, :method => "get", id: "search-form") do %>
-                    <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search profiles" %> 
+                    <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Your property location" %> 
                     <% end %>
                     </br>
                 </div>
@@ -28,7 +28,7 @@
                                     <%= link_to user do %>
                                     <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                                     <% end %>
-                                    <p><%= user.profile.job_title %></p>
+                                    <p><%= user.profile.services_offered %></p>
                                     <p><%= user.profile.description %></p>
                                 </div>
                             </div>
