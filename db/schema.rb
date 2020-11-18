@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201103030506) do
+ActiveRecord::Schema.define(version: 20201118013833) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20201103030506) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "business_name"
+    t.string   "short_term"
+    t.string   "long_term"
   end
 
   create_table "users", force: :cascade do |t|
