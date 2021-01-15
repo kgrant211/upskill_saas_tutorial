@@ -15,3 +15,8 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-tagsinput
+  $( document).on("turbolinks:load", function() {
+    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+  });
+

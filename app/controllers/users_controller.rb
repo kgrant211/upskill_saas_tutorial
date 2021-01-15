@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
    
    def index
-      @users = User.includes(:profile)
+      @users = User.includes(:profile, :locations)
 
       if params[:search]
          @users = User.includes(:profile).search(params[:search]).order("users.created_at DESC")
