@@ -6,7 +6,17 @@
         
         <div class="col-md-6">
             <h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
-            <h3><%= @user.profile.services_offered %></h3>
+            <h3>Services offered</h3>
+            <% if @user.profile.long_term == "true" %>
+            <div>
+              <p>Long term</p>  
+            </div>
+            <% end %>
+            <% if @user.profile.short_term == "true" %>
+            <div>
+                <p>Short term</p>
+            </div>
+            <% end %>
             <div class="well profile-block profile-description">
                 <h3>Description</h3>
                <%= @user.profile.description %> 
