@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require popper
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
 //= require bootstrap-tagsinput
   $( document).on("turbolinks:load", function() {

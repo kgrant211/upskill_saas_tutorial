@@ -52,6 +52,10 @@ gem "paperclip", "~> 6.0.0"
 # Use bootstrap tags in put for creating tags
 gem 'bootstrap-tagsinput-rails'
 
+gem 'bootstrap'
+
+gem 'popper_js','~> 1.14.5'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
