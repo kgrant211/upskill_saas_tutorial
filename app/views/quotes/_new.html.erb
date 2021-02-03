@@ -3,8 +3,30 @@
   <h4 class="modal-title" id="myModalLabel">Your property info</h4>
 </div>
 <div class="modal-body">
-  *Modal content comes here*
+  <h3 class="text-center">Share your details below</h3>
+  <!--<div class="col-md-4 col-md-offset-4">-->
+            <div class="well">
+               <%= form_for :quote, url:quotes_path do |f| %>
+                    <div class="form-group">
+                        <%= f.label :name %>
+                        <%= f.text_field :name, class: 'form-control' %>
+                    </div>
+                    
+                    <div class="form-group">
+                        <%= f.label :email %>
+                        <%= f.text_field :email, class: 'form-control' %>
+                    </div>
+                    
+                    <div class="form-group">
+                        <%= f.label :description %>
+                        <%= f.text_area :description, class: 'form-control' %>
+                    </div>
+                    
+                    <%= f.submit 'Submit', class: 'btn btn-default' %>
+                  <% end %>
+            </div>
+      </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary">Submit</button>
+  <!--<button class="btn btn-primary">Submit</button>-->
 </div>
